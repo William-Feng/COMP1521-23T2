@@ -1,0 +1,12 @@
+a) $t0 = 0x10010000
+b) $t0 = 666 (int)
+c) $t0 = 0x9a (666 == 0x0000029a, take first byte but remember CSE machine is little-endian)
+d) $t0 = 666 (int)
+e) $t1 = 0x10010008
+   $t0 = 1
+f) $t1 = 0x10010008
+   $t0 = 5 (loaded from address 0x10010010)
+g) $t1 = 8
+   $t0 = 5 (loaded from address 0x10010010)
+h) $t1 = 0x10010008
+   ??? Memory alignment error for $t0 (accessed address 0x1001000A) 
